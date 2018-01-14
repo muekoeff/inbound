@@ -1,0 +1,17 @@
+.highlight {
+	border-left: .75em solid #e31b2e;
+}
+.highlight button {
+	background-color: #0996f8;
+	border-color: #0670cc;
+	color: #fff;
+}
+.highlight button:disabled {
+	background-color: #fbfbfb;
+	border: 1px solid #b1b1b1;
+	color: GrayText
+}
+.highlight button:hover:not(.pressed):not(.disabled):not(.focused):not(:disabled) {
+    background-color: #0670cc;
+    border-color: #005bab;
+}

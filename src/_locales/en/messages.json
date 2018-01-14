@@ -1,0 +1,172 @@
+{
+  "background_authenticationDeadRelogin": {
+    "message": "Error during authentication. Please login again"
+  },
+  "background_authenticationDenied": {
+    "message": "Authentication denied by user. Without access to Reddit Inbound is pretty much useless. Please consider granting access for Inbound. If you prefer not to you can uninstall this extension."
+  },
+  "background_authenticationFailed": {
+    "message": "Authentication failed."
+  },
+  "background_authenticationFailedReddit": {
+    "message": "Authentication failed. Error reported by Reddit: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "background_authenticationFailedState": {
+    "message": "Title of created bookmarks",
+    "placeholders": {
+      "original": {
+        "content": "$2"
+      },
+      "returned": {
+        "content": "$1"
+      }
+    }
+  },
+  "background_authenticationSuccessful": {
+    "message": "Authentication successfull! We are ready to rumble."
+  },
+  "background_cantAccessFolder": {
+    "message": "Failed to prepare folder for sync. If you deleted it, please configure a new one in the settings."
+  },
+  "background_notAuthorised": {
+    "message": "Inbound is currently not authorised to access Reddit. Please open the extension settings of Inbound and grant access."
+  },
+  "background_promptConfiguration": {
+    "message": "Please access the addon settings und configure Inbound."
+  },
+  "background_promptConfigurationSteps": {
+    "message": "Please configure Inbound. Start by granting access to your Reddit account and then choose an output folder."
+  },
+  "background_reauthenticationFailed": {
+    "message": "Reauthentication failed."
+  },
+  "background_requestFailed": {
+    "message": "Request failed."
+  },
+  "background_specifyRoot": {
+    "message": "Please specify a root directory in the settings."
+  },
+  "background_syncSuccessful": {
+    "message": "Sync successfully finished"
+  },
+  "extension_description": {
+    "message": "Access your reddit saved links directly from your Firefox library"
+  },
+  "extension_name": {
+    "message": "Inbound for Reddit"
+  },
+  "extension_name_short": {
+    "message": "Inbound"
+  },
+  "options_bookmarkCreationSuccessful": {
+    "message": "Bookmark successfully created: $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "options_bookmarkFindFailed": {
+    "message": "Failed to find bookmark"
+  },
+  "options_bookmarkTitle": {
+    "message": "Title of the bookmark"
+  },
+  "options_bookmarks": {
+    "message": "Bookmarks"
+  },
+  "options_button_createAndChooseFolder": {
+    "message": "Create and choose folder"
+  },
+  "options_button_grantReddit": {
+    "message": "Grant access to Reddit account"
+  },
+  "options_button_loadTree": {
+    "message": "Load bookmark tree"
+  },
+  "options_comments": {
+    "message": "Comments"
+  },
+  "options_comments_c": {
+    "message": "Comments:"
+  },
+  "options_header_about": {
+    "message": "About"
+  },
+  "options_header_account": {
+    "message": "Account"
+  },
+  "options_header_output": {
+    "message": "Output"
+  },
+  "options_header_sync": {
+    "message": "Synchronisation"
+  },
+  "options_instruction_chooseFolder": {
+    "message": "<strong>Choose the parent folder of the folder to be created</strong> in which the bookmarks for Reddit will be created. This folder will be regularly emptied and therefore shouldn't be used for bookmarks not managed by Inbound."
+  },
+  "options_label_choseNameForFolder_c": {
+    "message": "Please choose a name for the folder:"
+  },
+  "options_label_chosenFolder_c": {
+    "message": "Chosen folder:"
+  },
+  "options_label_notifyOnFail": {
+    "message": "Notify about failed sync"
+  },
+  "options_label_notifyOnSuccess": {
+    "message": "Notify after successful sync"
+  },
+  "options_label_syncOnStart": {
+    "message": "Sync when browser is started"
+  },
+  "options_label_username_c": {
+    "message": "Username:"
+  },
+  "options_links": {
+    "message": "Links"
+  },
+  "options_links_c": {
+    "message": "Links:"
+  },
+  "options_loading_e": {
+    "message": "Loading..."
+  },
+  "options_notice_about": {
+    "message": "Inbound is an free and open project by <a href=\"https://nw520.de/\">nw520</a> and is available under the <a href=\"https://github.com/naseweis520/Inbound/blob/master/LICENSE\">MIT license</a>."
+  },
+  "options_notice_attribution": {
+    "message": "The following libraries and tools are used in or were used to create Inbound:"
+  },
+  "options_notice_folderNotDeleted": {
+    "message": "Please not that your currently chosen folder, if set, won't be deleted nor emptied after your change."
+  },
+  "options_notice_support": {
+    "message": "Do you have a question? Problem? Contribution or proposal? Than feel free to <a href=\"https://github.com/naseweis520/Inbound/issues\">get in touch with the authors on GitHub</a>."
+  },
+  "options_restoreOptionsFailed": {
+    "message": "Failed to restore options: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "options_title": {
+    "message": "Options | Inbound"
+  },
+  "options_unnamed": {
+    "message": "Unnamed"
+  },
+  "options_variable": {
+    "message": "Variable"
+  },
+  "options_variables_c": {
+    "message": "Variables:"
+  }
+}

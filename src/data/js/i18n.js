@@ -1,6 +1,10 @@
-MIT License
+/***
+// Source
+* https://github.com/rharel/webext-private-bookmarks
 
-Copyright (c) 2017 naseweis520
+* The MIT License (MIT)
+
+Copyright (c) 2017 Raoul Harel
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +23,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+***/
+
+(function() {
+    const LOCALIZED_TEXT = "data-localized";
+    const LOCALIZED_ATTRIBUTE = "data-localized-attribute";
+    const LOCALIZED_ATTRIBUTE_VALUE = "data-localized-attribute-value";
+
+    document.querySelectorAll(`[${LOCALIZED_TEXT}]`).forEach(element => {
+        const message = browser.i18n.getMessage(element.getAttribute(LOCALIZED_TEXT));
+        if(message !== "") { 
+            element.innerHTML = message; 
+        }
+    });
+    document.querySelectorAll(`[${LOCALIZED_ATTRIBUTE}]`).forEach(element => {
+        const message = browser.i18n.getMessage(lement.getAttribute(LOCALIZED_ATTRIBUTE_VALUE));
+        if(message !== "") {
+            element.setAttribute(element.getAttribute(LOCALIZED_ATTRIBUTE), message);
+        }
+    });
+})();

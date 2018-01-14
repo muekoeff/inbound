@@ -1,0 +1,172 @@
+{
+  "background_authenticationDeadRelogin": {
+    "message": "Fehler bei der Authentifizierung. Bitte erneut einloggen"
+  },
+  "background_authenticationDenied": {
+    "message": "Authentifizierung durch Benutzer verweigert. Ohne Zugriff zu Reddit ist Inbound so ziemlich sinnfrei. Bitte erörte erneut ob du Inbound Zugriff gewähren möchtest. Ansonsten kannst du diese Erweiterung deinstallieren."
+  },
+  "background_authenticationFailed": {
+    "message": "Authentifizierung fehlgeschlagen."
+  },
+  "background_authenticationFailedReddit": {
+    "message": "Authentifizierung fehlgeschlagen. Fehler gemeldet durch Reddit: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "background_authenticationFailedState": {
+    "message": "Titel der erstellen Lesezeichen",
+    "placeholders": {
+      "original": {
+        "content": "$1"
+      },
+      "returned": {
+        "content": "$1"
+      }
+    }
+  },
+  "background_authenticationSuccessful": {
+    "message": "Authentifizierung erfolgreich! Es kann losgehen!"
+  },
+  "background_cantAccessFolder": {
+    "message": "Fehler beim Vorbereitung des Ordners zum Synchronisieren. Solltest Du ihn gelöscht haben, so richte bitte in den Einstellungen einen neuen ein."
+  },
+  "background_notAuthorised": {
+    "message": "Inbound ist derzeit nicht authorisiert auf Reddit zuzugreifen. Bitte öffne die Erweiterungseinstellungen von Inbound und gewähre Zugriff."
+  },
+  "background_promptConfiguration": {
+    "message": "Bitte öffne die Addon-Einstellungen und konfiguriere Inbound."
+  },
+  "background_promptConfigurationSteps": {
+    "message": "Bitte konfiguriere Inbound. Starte dabei mit der Zugriffsfreigabe zu deinem Redditaccount und anschließend mit der Auswahl eines Ausgabeordners."
+  },
+  "background_reauthenticationFailed": {
+    "message": "Wiederauthentifizierung fehlgeschlagen."
+  },
+  "background_requestFailed": {
+    "message": "Anfrage fehlgeschlagen."
+  },
+  "background_specifyRoot": {
+    "message": "Bitte gib einen Stammordner in den Einstellungen an."
+  },
+  "background_syncSuccessful": {
+    "message": "Synchronisation erfolgreich abgeschlossen"
+  },
+  "extension_description": {
+    "message": "Greife auf Deine auf Reddit gespeicherten Links direkt aus Deiner Firefox Bibliothek zu"
+  },
+  "extension_name": {
+    "message": "Inbound für Reddit"
+  },
+  "extension_name_short": {
+    "message": "Inbound"
+  },
+  "options_bookmarkCreationSuccessful": {
+    "message": "Lesezeichen erfolgreich erstellt: $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "options_bookmarkFindFailed": {
+    "message": "Fehler beim Finden des Lesezeichens"
+  },
+  "options_bookmarkTitle": {
+    "message": "Titel des Lesezeichens"
+  },
+  "options_bookmarks": {
+    "message": "Lesezeichen"
+  },
+  "options_button_createAndChooseFolder": {
+    "message": "Erstelle und wähle Ordner"
+  },
+  "options_button_grantReddit": {
+    "message": "Zugang zu Reddit Account genehmigen"
+  },
+  "options_button_loadTree": {
+    "message": "Lesezeichenbaum laden"
+  },
+  "options_comments": {
+    "message": "Kommentare"
+  },
+  "options_comments_c": {
+    "message": "Kommentare:"
+  },
+  "options_header_about": {
+    "message": "Über"
+  },
+  "options_header_account": {
+    "message": "Account"
+  },
+  "options_header_output": {
+    "message": "Ausgabe"
+  },
+  "options_header_sync": {
+    "message": "Synchronisierung"
+  },
+  "options_instruction_chooseFolder": {
+    "message": "<strong>Wähle den übergeordneten Ordner für den zu erstellenden Ordner</strong> in welchem die Lesezeichen für Reddit erstellt werden. Dieser Ordner wird regelmäßig geleert und sollte daher nicht für Lesezeichen verwendet werden, die nicht von Inbound verwaltet werden."
+  },
+  "options_label_choseNameForFolder_c": {
+    "message": "Bitte wähle einen Namen für den Ordner:"
+  },
+  "options_label_chosenFolder_c": {
+    "message": "Ausgewählter Ordner:"
+  },
+  "options_label_notifyOnFail": {
+    "message": "Bei fehlerhafter Synchronisation benachrichtigen"
+  },
+  "options_label_notifyOnSuccess": {
+    "message": "Bei erfolgreicher Synchronisation benachrichtigen"
+  },
+  "options_label_syncOnStart": {
+    "message": "Bei Start des Browsers synchronisieren"
+  },
+  "options_label_username_c": {
+    "message": "Benutzername:"
+  },
+  "options_links": {
+    "message": "Links"
+  },
+  "options_links_c": {
+    "message": "Links:"
+  },
+  "options_loading_e": {
+    "message": "Lädt..."
+  },
+  "options_notice_about": {
+    "message": "Inbound is ein freies und offenes Projekt von <a href=\"https://nw520.de/\">nw520</a> und steht unter der <a href=\"https://github.com/naseweis520/Inbound/blob/master/LICENSE\">MIT Lizenz</a>."
+  },
+  "options_notice_attribution": {
+    "message": "Die folgenden Software-Bibliotheken und Tools werden verwendet in bzw. wurden verwendet um Inbound zu machen."
+  },
+  "options_notice_folderNotDeleted": {
+    "message": "Bitte beachte, dass Dein aktuell ausgewählter Ordner, soweit vorhanden, noch der Änderung weder gelöscht noch geleert wird."
+  },
+  "options_notice_support": {
+    "message": "Gibt es eine Frage? Probleme? Vorschläge? Dann <a href=\"https://github.com/naseweis520/Inbound/issues\">tritt auf GitHub mit den Autoren in Kontakt</a>."
+  },
+  "options_restoreOptionsFailed": {
+    "message": "Wiederherstellen der Optionen fehlgeschlagen: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "options_title": {
+    "message": "Optionen | Inbound"
+  },
+  "options_unnamed": {
+    "message": "Unbenannt"
+  },
+  "options_variable": {
+    "message": "Variable"
+  },
+  "options_variables_c": {
+    "message": "Variablen:"
+  }
+}
