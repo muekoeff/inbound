@@ -15,7 +15,7 @@
 				<button id="option--account_requestGrant" class="browser-style" data-localized="options_button_grantReddit">{{options_button_grantReddit}}</button>
 			</div>
 			<div class="browser-style panel-formElements-item">
-				<strong data-localized="options_label_username_c">{{options_label_username_c}}</strong>&nbsp;<span id="account_redditUsername">&mdash;</span><br/>
+				<strong data-localized="options_username_c">{{options_username_c}}</strong>&nbsp;<span id="account_redditUsername">&mdash;</span><br/>
 			</div>
 		</div>
 	</div>
@@ -25,24 +25,25 @@
 		</div>
 		<div class="panel-section-formElements">
 			<div class="browser-style panel-formElements-item">
-				<span><strong data-localized="options_label_chosenFolder_c">{{options_label_chosenFolder_c}}</strong>&nbsp;<span id="output_folderId">&mdash;</span></span>
+				<span><strong data-localized="options_chosenFolder_c">{{options_chosenFolder_c}}</strong>&nbsp;<span id="output_folderId">&mdash;</span></span>
 			</div>
 			<div class="browser-style panel-formElements-item">
-				<span data-localized="options_instruction_chooseFolder">{{options_instruction_chooseFolder}}</span>
+				<span data-localized="options_chooseFolder">{{options_chooseFolder}}</span>
 			</div>
 			<div class="browser-style panel-formElements-item">
 				<div id="folderPicker">
-					<button id="output_loadBookmarkTree" class="browser-style" data-localized="options_button_loadTree">{{options_button_loadTree}}</button>
+					<button id="output_loadBookmarkTree" class="browser-style" data-localized="options_loadTree">{{options_loadTree}}</button>
 				</div>
 			</div>
 			<div class="browser-style panel-formElements-item">
-				<strong data-localized="options_label_choseNameForFolder_c">{{options_label_choseNameForFolder_c}}</strong>&nbsp;&nbsp;&nbsp;<span id="output_bookmarkRoot">...</span>/
-				<input id="output_bookmarkFolderName" type="text" disabled />
+				<div>
+					<button id="output_bookmarkChoose" class="browser-style" disabled data-localized="options_useChosenFolder">{{options_useChosenFolder}}</button><br/>
+					<strong data-localized="options_or_cl">{{options_or_cl}}</strong><br/>
+					<strong data-localized="options_choseNameForFolder_c">{{options_choseNameForFolder_c}}</strong>&nbsp;&nbsp;&nbsp;<span id="output_bookmarkRoot">...</span>/<input id="output_bookmarkFolderName" type="text" disabled /><br/>
+					<button id="output_bookmarkCreate" class="browser-style" disabled data-localized="options_createAndChooseFolder">{{options_createAndChooseFolder}}</button>
+				</div>
 			</div>
-			<div class="browser-style panel-formElements-item">
-				<button id="output_bookmarkCreate" class="browser-style" disabled data-localized="options_button_createAndChooseFolder">{{options_button_createAndChooseFolder}}</button>
-			</div>
-			<div class="browser-style panel-formElements-item" data-localized="options_notice_folderNotDeleted">{{options_notice_folderNotDeleted}}</div>
+			<div class="browser-style panel-formElements-item" data-localized="options_folderNotDeleted">{{options_folderNotDeleted}}</div>
 		</div>
 	</div>
 	<div class="panel">
@@ -52,15 +53,15 @@
 		<div class="panel-section-formElements">
 			<div class="browser-style panel-formElements-item">
 				<input id="option--general_syncOnBrowserStart" class="option" type="checkbox">
-				<label for="option--general_syncOnBrowserStart" data-localized="options_label_syncOnStart">{{options_label_syncOnStart}}</label>
+				<label for="option--general_syncOnBrowserStart" data-localized="options_syncOnStart">{{options_syncOnStart}}</label>
 			</div>
 			<div class="browser-style panel-formElements-item">
 				<input id="option--general_notifyOnSuccess" class="option" type="checkbox">
-				<label for="option--general_notifyOnSuccess" data-localized="options_label_notifyOnSuccess">{{options_label_notifyOnSuccess}}</label>
+				<label for="option--general_notifyOnSuccess" data-localized="options_notifyOnSuccess">{{options_notifyOnSuccess}}</label>
 			</div>
 			<div class="browser-style panel-formElements-item">
 				<input id="option--general_notifyOnFail" class="option" type="checkbox">
-				<label for="option--general_notifyOnFail" data-localized="options_label_notifyOnFail">{{options_label_notifyOnFail}}</label>
+				<label for="option--general_notifyOnFail" data-localized="options_notifyOnFail">{{options_notifyOnFail}}</label>
 			</div>
 		</div>
 	</div>
@@ -184,9 +185,9 @@
 			<div class="text-section-header" data-localized="options_header_about">{{options_header_about}}</div>
 		</div>
 		<div class="panel-section-formElements">
-			<p style="margin-top:0"><span data-localized="options_notice_support">{{options_notice_support}}</span></p>
-			<span data-localized="options_notice_about">{{options_notice_about}}</span>
-			<span data-localized="options_notice_attribution">{{options_notice_attribution}}</span>
+			<p style="margin-top:0"><span data-localized="options_support">{{options_support}}</span></p>
+			<span data-localized="options_about">{{options_about}}</span>
+			<span data-localized="options_attribution">{{options_attribution}}</span>
 			<ul>
 				<li><a href="https://github.com/rharel/webext-private-bookmarks">Private Bookmarks by rharel</a> &mdash; UI Localization script</li>
 				<li><a href="https://github.com/jcbvm/i18n-editor">i18n-editor by jcbvm</a> &mdash; Used for translation</li>

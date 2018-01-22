@@ -63,6 +63,12 @@
   "extension_name_short": {
     "message": "Inbound"
   },
+  "options_about": {
+    "message": "Inbound is ein freies und offenes Projekt von <a href=\"https://nw520.de/\">nw520</a> und steht unter der <a href=\"https://github.com/naseweis520/Inbound/blob/master/LICENSE\">MIT Lizenz</a>."
+  },
+  "options_attribution": {
+    "message": "Die folgenden Software-Bibliotheken und Tools werden verwendet in bzw. wurden verwendet um Inbound zu machen."
+  },
   "options_bookmarkCreationSuccessful": {
     "message": "Lesezeichen erfolgreich erstellt: $NAME$",
     "placeholders": {
@@ -74,26 +80,41 @@
   "options_bookmarkFindFailed": {
     "message": "Fehler beim Finden des Lesezeichens"
   },
+  "options_bookmarkSetError": {
+    "message": "Fehler beim Setzen des Lesezeichens"
+  },
+  "options_bookmarkSetSuccessful": {
+    "message": "Lesezeichen erfolgreich gesetzt"
+  },
   "options_bookmarkTitle": {
     "message": "Titel des Lesezeichens"
   },
   "options_bookmarks": {
     "message": "Lesezeichen"
   },
-  "options_button_createAndChooseFolder": {
-    "message": "Erstelle und wähle Ordner"
-  },
   "options_button_grantReddit": {
     "message": "Zugang zu Reddit Account genehmigen"
   },
-  "options_button_loadTree": {
-    "message": "Lesezeichenbaum laden"
+  "options_chooseFolder": {
+    "message": "<strong>Wähle den übergeordneten Ordner für den zu erstellenden Ordner</strong> in welchem die Lesezeichen für Reddit erstellt werden. Dieser Ordner wird regelmäßig geleert und sollte daher nicht für Lesezeichen verwendet werden, die nicht von Inbound verwaltet werden."
+  },
+  "options_choseNameForFolder_c": {
+    "message": "Wähle einen Namen für den Ordner:"
+  },
+  "options_chosenFolder_c": {
+    "message": "Ausgewählter Ordner:"
   },
   "options_comments": {
     "message": "Kommentare"
   },
   "options_comments_c": {
     "message": "Kommentare:"
+  },
+  "options_createAndChooseFolder": {
+    "message": "Erstelle und wähle Ordner"
+  },
+  "options_folderNotDeleted": {
+    "message": "Bitte beachte, dass Dein aktuell ausgewählter Ordner, soweit vorhanden, noch der Änderung weder gelöscht noch geleert wird."
   },
   "options_header_about": {
     "message": "Über"
@@ -107,47 +128,26 @@
   "options_header_sync": {
     "message": "Synchronisierung"
   },
-  "options_instruction_chooseFolder": {
-    "message": "<strong>Wähle den übergeordneten Ordner für den zu erstellenden Ordner</strong> in welchem die Lesezeichen für Reddit erstellt werden. Dieser Ordner wird regelmäßig geleert und sollte daher nicht für Lesezeichen verwendet werden, die nicht von Inbound verwaltet werden."
-  },
-  "options_label_choseNameForFolder_c": {
-    "message": "Bitte wähle einen Namen für den Ordner:"
-  },
-  "options_label_chosenFolder_c": {
-    "message": "Ausgewählter Ordner:"
-  },
-  "options_label_notifyOnFail": {
-    "message": "Bei fehlerhafter Synchronisation benachrichtigen"
-  },
-  "options_label_notifyOnSuccess": {
-    "message": "Bei erfolgreicher Synchronisation benachrichtigen"
-  },
-  "options_label_syncOnStart": {
-    "message": "Bei Start des Browsers synchronisieren"
-  },
-  "options_label_username_c": {
-    "message": "Benutzername:"
-  },
   "options_links": {
     "message": "Links"
   },
   "options_links_c": {
     "message": "Links:"
   },
+  "options_loadTree": {
+    "message": "Lesezeichenbaum laden"
+  },
   "options_loading_e": {
     "message": "Lädt..."
   },
-  "options_notice_about": {
-    "message": "Inbound is ein freies und offenes Projekt von <a href=\"https://nw520.de/\">nw520</a> und steht unter der <a href=\"https://github.com/naseweis520/Inbound/blob/master/LICENSE\">MIT Lizenz</a>."
+  "options_notifyOnFail": {
+    "message": "Bei fehlerhafter Synchronisation benachrichtigen"
   },
-  "options_notice_attribution": {
-    "message": "Die folgenden Software-Bibliotheken und Tools werden verwendet in bzw. wurden verwendet um Inbound zu machen."
+  "options_notifyOnSuccess": {
+    "message": "Bei erfolgreicher Synchronisation benachrichtigen"
   },
-  "options_notice_folderNotDeleted": {
-    "message": "Bitte beachte, dass Dein aktuell ausgewählter Ordner, soweit vorhanden, noch der Änderung weder gelöscht noch geleert wird."
-  },
-  "options_notice_support": {
-    "message": "Gibt es eine Frage? Probleme? Vorschläge? Dann <a href=\"https://github.com/naseweis520/Inbound/issues\">tritt auf GitHub mit den Autoren in Kontakt</a>."
+  "options_or_cl": {
+    "message": "ODER"
   },
   "options_restoreOptionsFailed": {
     "message": "Wiederherstellen der Optionen fehlgeschlagen: $ERROR$",
@@ -157,11 +157,23 @@
       }
     }
   },
+  "options_support": {
+    "message": "Gibt es eine Frage? Probleme? Vorschläge? Dann <a href=\"https://github.com/naseweis520/Inbound/issues\">tritt auf GitHub mit den Autoren in Kontakt</a>."
+  },
+  "options_syncOnStart": {
+    "message": "Bei Start des Browsers synchronisieren"
+  },
   "options_title": {
     "message": "Optionen | Inbound"
   },
   "options_unnamed": {
     "message": "Unbenannt"
+  },
+  "options_useChosenFolder": {
+    "message": "Den gewählten Ordner verwenden"
+  },
+  "options_username_c": {
+    "message": "Benutzername:"
   },
   "options_variable": {
     "message": "Variable"

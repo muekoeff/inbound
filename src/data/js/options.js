@@ -42,26 +42,49 @@ var folderPicker = {
 					document.getElementById("output_bookmarkRoot").innerHTML = this.innerHTML;
 					document.getElementById("output_bookmarkRoot").setAttribute("data-id", this.getAttribute("data-id"));
 					document.getElementById("output_bookmarkFolderName").removeAttribute("disabled");
+					document.getElementById("output_bookmarkChoose").removeAttribute("disabled");
 					document.getElementById("output_bookmarkCreate").removeAttribute("disabled");
+				});
+			});
+		});
+		document.getElementById("output_bookmarkChoose").addEventListener("click", function(e) {
+			var rootId = document.getElementById("output_bookmarkRoot").getAttribute("data-id");
+
+			document.getElementById("output_bookmarkFolderName").setAttribute("disabled", "disabled");
+			document.getElementById("output_bookmarkCreate").setAttribute("disabled", "disabled");
+			document.getElementById("output_bookmarkChoose").setAttribute("disabled", "disabled");
+
+			browser.bookmarks.get(rootId).then(function(e) {
+				console.log(e);
+				folderPicker.setBookmarkId(e[0].id, e[0].title, function() {
+					browser.runtime.sendMessage({
+						command: MESSAGE_COMMANDS.basicNotification,
+						content: _e("options_bookmarkSetSuccessful", e.title)
+					});
+				}, function(e) {
+					browser.runtime.sendMessage({
+						command: MESSAGE_COMMANDS.basicNotification,
+						content: _e("options_bookmarkSetError", e.title)
+					});
+				});
+			}, function(e) {
+				browser.runtime.sendMessage({
+					command: MESSAGE_COMMANDS.basicNotification,
+					content: _e("options_bookmarkSetError", e.title)
 				});
 			});
 		});
 		document.getElementById("output_bookmarkCreate").addEventListener("click", function(e) {
 			document.getElementById("output_bookmarkFolderName").setAttribute("disabled", "disabled");
 			document.getElementById("output_bookmarkCreate").setAttribute("disabled", "disabled");
+			document.getElementById("output_bookmarkChoose").setAttribute("disabled", "disabled");
 
 			var bookmark = browser.bookmarks.create({
 				parentId: document.getElementById("output_bookmarkRoot").getAttribute("data-id"),
 				title: document.getElementById("output_bookmarkFolderName").value,
 				type: "folder"
 			}).then(function(e) {
-				browser.storage.local.set({"output_bookmarkRootId": e.id}).then(function() {
-					document.getElementById("output_folderId").innerHTML = `${document.getElementById("output_bookmarkFolderName").value} (${e.id})`;
-					document.getElementById("panel_output").classList.remove("highlight");
-					browser.runtime.sendMessage({
-						command: MESSAGE_COMMANDS.setBookmarkRootId,
-						content: e.id
-					});
+				folderPicker.setBookmarkId(e.id, e.title, function() {
 					browser.runtime.sendMessage({
 						command: MESSAGE_COMMANDS.basicNotification,
 						content: _e("options_bookmarkCreationSuccessful", e.title)
@@ -70,6 +93,22 @@ var folderPicker = {
 			});
 		});
 	},
+	setBookmarkDisplay: function(id, name) {
+		document.getElementById("output_folderId").innerHTML = `${name} (${id})`;
+	},
+	setBookmarkId: function(id, name, onSuccess, onError) {
+		browser.storage.local.set({"output_bookmarkRootId": id}).then(function(e) {
+			folderPicker.setBookmarkDisplay(id, name);
+			document.getElementById("panel_output").classList.remove("highlight");
+			browser.runtime.sendMessage({
+				command: MESSAGE_COMMANDS.setBookmarkRootId,
+				content: id
+			});
+			if(is(onSuccess)) onSuccess(e);
+		}, function(e) {
+			if(is(onError)) onError(e);
+		});
+	}
 };
 
 function bindSaveEvent() {
@@ -102,6 +141,9 @@ function init() {
 		}
 	});
 }
+function is(target) {
+	return typeof target != "undefined" && target !== null;
+}
 function restoreOptions() {
 	function setCurrentChoice(result) {
 		for(const item in result) {
@@ -124,9 +166,9 @@ function restoreOptions() {
 		if("output_bookmarkRootId" in result && "output_bookmarkRootId" != "") {
 			document.getElementById("output_folderId").innerHTML = result["output_bookmarkRootId"];
 			browser.bookmarks.get(result["output_bookmarkRootId"]).then(function(e) {
-				document.getElementById("output_folderId").innerHTML = `${e[0].title} (${document.getElementById("output_folderId").innerHTML})`;
+				folderPicker.setBookmarkDisplay(e[0].id, e[0].title);
 			}, function(e) {
-				document.getElementById("output_folderId").innerHTML = `<i>${_e("options_bookmarkFindFailed")}</i> (${document.getElementById("output_folderId").innerHTML})`;
+				folderPicker.setBookmarkDisplay(`<i>${_e("options_bookmarkFindFailed")}</i>`, document.getElementById("output_folderId").innerHTML);
 				document.getElementById("panel_output").className = " highlight";
 			});
 		} else {

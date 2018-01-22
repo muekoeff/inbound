@@ -220,22 +220,34 @@ var redditApi = {
 		};
 		xhr.send(content);
 	},
-	getSaved: function(onSuccess) {
+	getSaved: function(onSuccess, onError) {
+		if(!is(inbound.authorisation.username)) {
+			redditApi.getUsername(function() {
+				redditApi._getSaved(onSuccess, onError);
+			});
+		} else {
+			redditApi._getSaved(onSuccess, onError);
+		}
+	},
+	_getSaved: function(onSuccess, onError) {
 		redditApi.get(`/user/${inbound.authorisation.username}/saved`, function(e) {
 			onSuccess(e);
 		}, function(xhr) {
 			util.basicNotification(`${_e("background_requestFailed")} ${xhr.status} ${xhr.statusText}`);
+			if(is(onError)) onError(xhr);
 		});
 	},
-	getUsername: function() {
+	getUsername: function(onSuccess, onError) {
 		redditApi.get("/api/v1/me", function(e) {
 			inbound.authorisation.username = e.name;
 			browser.runtime.sendMessage({
 				command: MESSAGE_COMMANDS.authFinished,
 				content: e.name
 			});
+			if(is(onSuccess)) onSuccess(e);
 		}, function(xhr) {
 			util.basicNotification(`${_e("background_requestFailed")} ${xhr.status} ${xhr.statusText}`);
+			if(is(onError)) onError(xhr);
 		});
 	}
 };
