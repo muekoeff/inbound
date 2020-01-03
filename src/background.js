@@ -1,7 +1,7 @@
 var inbound = {
 	authorisation: {
 		CLIENT_ID: "cV7fIUajw4xQAQ",
-		REDIRECT_URI: "https://api.nw520.de/inbound/oauth",
+		REDIRECT_URI: "https://api.muekev.de/inbound/oauth",
 		accessToken: null,
 		expiresAt: null,
 		refreshToken: null,
@@ -11,7 +11,8 @@ var inbound = {
 	data: {
 		_loaded: false,
 		bookmarkRootId: null,
-		initialSync: false
+		initialSync: false,
+		isSyncing: false
 	},
 	messages: {
 		displayedLoginReminder: false
@@ -188,7 +189,6 @@ var redditApi = {
 				};
 				xhr.onerror = function(e) {
 					console.error(xhr);
-					if(is(onError)) onError(xhr);
 				};
 				xhr.send();
 			}, (is(onError) ? onError : null), function() {
@@ -233,7 +233,6 @@ var redditApi = {
 		redditApi.get(`/user/${inbound.authorisation.username}/saved`, function(e) {
 			onSuccess(e);
 		}, function(xhr) {
-			util.basicNotification(`${_e("background_requestFailed")} ${xhr.status} ${xhr.statusText}`);
 			if(is(onError)) onError(xhr);
 		});
 	},
@@ -246,7 +245,6 @@ var redditApi = {
 			});
 			if(is(onSuccess)) onSuccess(e);
 		}, function(xhr) {
-			util.basicNotification(`${_e("background_requestFailed")} ${xhr.status} ${xhr.statusText}`);
 			if(is(onError)) onError(xhr);
 		});
 	}
@@ -365,7 +363,11 @@ function loadSettings() {
 function performSync(bookmarkRootId) {
 	var total;
 
+	if(inbound.data.isSyncing) {
+		return;
+	}
 	if(is(bookmarkRootId)) {
+		inbound.data.isSyncing = true;
 		fetchSaves(function(e) {
 			clearFolder(function() {
 				total = e.data.children.length;
@@ -379,10 +381,15 @@ function performSync(bookmarkRootId) {
 							break;
 					}
 				});
+				inbound.data.isSyncing = false;
 			}, function(e) {
 				console.error(e);
 				util.basicNotification(_e("background_cantAccessFolder"));
+				inbound.data.isSyncing = false;
 			});
+		}, function(e) {
+			util.basicNotification(_e("background_requestFailed"));
+			inbound.data.isSyncing = false;
 		});
 	} else {
 		util.basicNotification(_e("background_specifyRoot"));

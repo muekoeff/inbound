@@ -64,7 +64,7 @@
     "message": "Inbound"
   },
   "options_about": {
-    "message": "Inbound is an free and open project by <a href=\"https://nw520.de/\">nw520</a> and is available under the <a href=\"https://github.com/naseweis520/Inbound/blob/master/LICENSE\">MIT license</a>."
+    "message": "Inbound is an free and open project by <a href=\"https://muekev.de/\">µKöff</a> and is available under the <a href=\"https://github.com/muekoeff/inbound/blob/master/LICENSE\">MIT license</a>."
   },
   "options_attribution": {
     "message": "The following libraries and tools are used in or were used to create Inbound:"
@@ -84,7 +84,7 @@
     "message": "Failed to set bookmark"
   },
   "options_bookmarkSetSuccessful": {
-    "message": "Bookmark successfully sett"
+    "message": "Bookmark successfully set"
   },
   "options_bookmarkTitle": {
     "message": "Title of the bookmark"
@@ -158,7 +158,7 @@
     }
   },
   "options_support": {
-    "message": "Do you have a question? Problem? Contribution or proposal? Than feel free to <a href=\"https://github.com/naseweis520/Inbound/issues\">get in touch with the authors on GitHub</a>."
+    "message": "Do you have a question? Problem? Contribution or proposal? Than feel free to <a href=\"https://github.com/muekoeff/inbound/issues\">get in touch with the authors on GitHub</a>."
   },
   "options_syncOnStart": {
     "message": "Sync when browser is started"

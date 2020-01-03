@@ -64,7 +64,7 @@
     "message": "Inbound"
   },
   "options_about": {
-    "message": "Inbound is ein freies und offenes Projekt von <a href=\"https://nw520.de/\">nw520</a> und steht unter der <a href=\"https://github.com/naseweis520/Inbound/blob/master/LICENSE\">MIT Lizenz</a>."
+    "message": "Inbound is ein freies und offenes Projekt von <a href=\"https://muekev.de/\">µKöff</a> und steht unter der <a href=\"https://github.com/muekoeff/inbound/blob/master/LICENSE\">MIT Lizenz</a>."
   },
   "options_attribution": {
     "message": "Die folgenden Software-Bibliotheken und Tools werden verwendet in bzw. wurden verwendet um Inbound zu machen."
@@ -158,7 +158,7 @@
     }
   },
   "options_support": {
-    "message": "Gibt es eine Frage? Probleme? Vorschläge? Dann <a href=\"https://github.com/naseweis520/Inbound/issues\">tritt auf GitHub mit den Autoren in Kontakt</a>."
+    "message": "Gibt es eine Frage? Probleme? Vorschläge? Dann <a href=\"https://github.com/muekoeff/inbound/issues\">tritt auf GitHub mit den Autoren in Kontakt</a>."
   },
   "options_syncOnStart": {
     "message": "Bei Start des Browsers synchronisieren"
