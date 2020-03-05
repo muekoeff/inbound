@@ -1,7 +1,6 @@
 var inbound = {
 	authorisation: {
 		CLIENT_ID: "cV7fIUajw4xQAQ",
-		REDIRECT_URI: "https://api.muekev.de/inbound/oauth",
 		accessToken: null,
 		expiresAt: null,
 		refreshToken: null,
@@ -26,7 +25,7 @@ var redditApi = {
 			url.searchParams.set("response_type", "code");
 			inbound.authorisation.state = util.random(10);
 			url.searchParams.set("state", inbound.authorisation.state);
-			url.searchParams.set("redirect_uri", inbound.authorisation.REDIRECT_URI);
+			url.searchParams.set("redirect_uri", browser.identity.getRedirectURL());
 			url.searchParams.set("duration", "permanent");
 			url.searchParams.set("scope", ['history', 'identity'].join(","));
 
@@ -42,7 +41,6 @@ var redditApi = {
 				"redirect_uri": inbound.authorisation.REDIRECT_URI
 			}), function(e) {
 				if(!("error" in e)) {
-					console.log(e);
 					inbound.authorisation.accessToken = e.access_token;
 					inbound.authorisation.expiresAt = Date.now() + e.expires_in - 60;	// 60 seconds tolerance
 					inbound.authorisation.refreshToken = e.refresh_token;
@@ -65,8 +63,6 @@ var redditApi = {
 			})
 		},
 		purge: function() {
-			console.log("redditApi.auth.purge()");
-
 			inbound.authorisation.accessToken = null;
 			inbound.authorisation.expiresAt = null;
 			inbound.authorisation.refreshToken = null;
@@ -83,15 +79,12 @@ var redditApi = {
 			});
 		},
 		refreshToken: function(onSuccess, onError) {
-			console.log("redditApi.auth.refreshToken()");
-
 			redditApi.postBasic("/api/v1/access_token", util.encodeUriItems({
 				"duration": "permanent",
 				"grant_type": "refresh_token",
 				"refresh_token": inbound.authorisation.refreshToken
 			}), function(e) {
 				if(!("error" in e)) {
-					console.log(e);
 					inbound.authorisation.accessToken = e.access_token;
 					inbound.authorisation.expiresAt = Date.now() + (e.expires_in * 100) - 60000;	// Convert Reddit's seconds to miliseconds and substract 60 seconds tolerance
 					// DON'T EVEN ASK HOW LONG IT TOOK TO REALIZE THAT I *DON'T* NEED A NEW REFRESH TOKEN
@@ -102,7 +95,6 @@ var redditApi = {
 						auth_refreshToken: inbound.authorisation.refreshToken
 					});
 
-					console.log("Reauth successfull");
 					if(is(onSuccess)) onSuccess();
 				} else {
 					console.error(e);
@@ -121,7 +113,6 @@ var redditApi = {
 		start: function() {
 			redditApi.auth.flow().then(function(e) {
 				let url = new URL(e);
-				console.log(e);
 				if(url.searchParams.get("state") === inbound.authorisation.state) {
 					if(url.searchParams.get("error") === null) {
 						let code = url.searchParams.get("code");
@@ -172,8 +163,6 @@ var redditApi = {
 				xhr.open("GET", `https://oauth.reddit.com${endpoint}`, true);
 				xhr.setRequestHeader("Authorization", `bearer ${inbound.authorisation.accessToken}`);
 				xhr.onreadystatechange = function(e) {
-					console.log(xhr);
-
 					if(xhr.readyState === 4) {
 						if(xhr.status === 200) {
 							var response = JSON.parse(xhr.responseText);
@@ -314,7 +303,6 @@ browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 			});
 			break;
 		case MESSAGE_COMMANDS.reloadSettings:
-			console.log("Settings reloaded");
 			loadSettings();
 			break;
 		case MESSAGE_COMMANDS.setBookmarkRootId:
@@ -414,9 +402,7 @@ function performSync(bookmarkRootId) {
 		});
 	}
 	function clearFolder(onSuccess, onError) {
-		console.log("clearFolder");
 		browser.bookmarks.getSubTree(bookmarkRootId).then(function(e) {
-			console.log(e);
 			e[0].children.forEach(function(item) {
 				browser.bookmarks.remove(item.id);
 			});

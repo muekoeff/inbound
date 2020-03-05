@@ -55,7 +55,6 @@ var folderPicker = {
 			document.getElementById("output_bookmarkChoose").setAttribute("disabled", "disabled");
 
 			browser.bookmarks.get(rootId).then(function(e) {
-				console.log(e);
 				folderPicker.setBookmarkId(e[0].id, e[0].title, function() {
 					browser.runtime.sendMessage({
 						command: MESSAGE_COMMANDS.basicNotification,
@@ -204,7 +203,6 @@ function saveOptions(e) {
 				}
 		}
 	});
-	console.log(settings);
 
 	browser.storage.local.set(settings).then(function(e) {
 		browser.runtime.sendMessage({
@@ -225,12 +223,10 @@ function _e(id, param) {
 browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 	switch(message.command) {
 		case MESSAGE_COMMANDS.authFinished:
-			console.log("MESSAGE_COMMANDS.authFinished");
 			document.getElementById("account_redditUsername").innerHTML = message.content;
 			document.getElementById("panel_account").classList.remove("highlight");
 			break;
 		case MESSAGE_COMMANDS.noAuth:
-			console.log("MESSAGE_COMMANDS.noAuth");
 			document.getElementById("panel_account").classList.add("highlight");
 			break;
 	};

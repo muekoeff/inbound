@@ -11,6 +11,11 @@
 			"32": "data/icons/favicon-32.png"
 		}
 	},
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{073febe1-ed9e-4ff9-9db9-e31522bddd0b}"
+		}
+	},
 	"default_locale": "en",
 	"description": "__MSG_extension_description__",
 	"homepage_url": "https://github.com/muekoeff/inbound",
@@ -33,5 +38,5 @@
 		"notifications",
 		"storage"
 	],
-	"version": "0.3"
+	"version": "0.4"
 }
