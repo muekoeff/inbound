@@ -38,7 +38,7 @@ var redditApi = {
 			redditApi.postBasic("/api/v1/access_token", util.encodeUriItems({
 				"code": code,
 				"grant_type": "authorization_code",
-				"redirect_uri": inbound.authorisation.REDIRECT_URI
+				"redirect_uri": browser.identity.getRedirectURL()
 			}), function(e) {
 				if(!("error" in e)) {
 					inbound.authorisation.accessToken = e.access_token;

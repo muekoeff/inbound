@@ -158,7 +158,7 @@
     }
   },
   "options_support": {
-    "message": "Do you have a question? Problem? Contribution or proposal? Than feel free to <a href=\"https://github.com/muekoeff/inbound/issues\">get in touch with the authors on GitHub</a>."
+    "message": "Do you have a question? Problem? Contribution or proposal? Then feel free to <a href=\"https://github.com/muekoeff/inbound/issues\" target=\"_blank\">get in touch with the developers on GitHub</a>."
   },
   "options_syncOnStart": {
     "message": "Sync when browser is started"

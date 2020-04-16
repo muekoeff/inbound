@@ -1,1 +1,11 @@
-{}
+{
+  "description": {
+    "message": "<strong>Setup</strong>\nIn order to setup this addon please access the Addon-management page and click on the \"Settings\" button."
+  },
+  "name": {
+    "message": "Inbound for Reddit"
+  },
+  "summary": {
+    "message": "Access your reddit saved links directly from your Firefox library"
+  }
+}

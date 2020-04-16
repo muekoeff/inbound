@@ -1,1 +1,11 @@
-{}
+{
+  "description": {
+    "message": "<strong>Einrichtung</strong>\nUm das Addon einzurichten, greife bitte über die Addon-Verwaltung auf die Einstellungsseite des Addons zu."
+  },
+  "name": {
+    "message": "Inbound für Reddit"
+  },
+  "summary": {
+    "message": "Greife auf Deine auf Reddit gespeicherten Links direkt aus Deiner Firefox Bibliothek zu"
+  }
+}
